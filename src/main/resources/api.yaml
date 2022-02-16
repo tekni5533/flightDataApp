@@ -1,0 +1,46 @@
+swagger: '2.0'
+info:
+  title: 'Flight Data API'
+  description: 'API specification for Flight data'
+  version: '0.0.1'
+schemes:
+  - http
+basePath: /
+produces:
+  - 'application/json;charset=UTF-8'
+
+paths:
+  /flightData:
+    get:
+      summary: 'Get all Ledgers'
+      description: 'Request all active ledgerAssets from the ledgers of all active accounts'
+      operationId: getFlightData
+      responses:
+        200:
+          description: 'Flight data retrieved successfully'
+          schema:
+            $ref: '#/definitions/StateVectorResponse'
+        404:
+          description: 'Flight data not found'
+        503:
+          description: 'Service unavailable'
+
+definitions:
+  StateVectorResponse:
+    type: object
+    properties:
+      assets:
+        type: array
+        items:
+          $ref: '#/definitions/StateVector'
+  StateVector:
+    type: object
+    properties:
+      icao24:
+        type: string
+        example: '4b1809'
+        description: 'Unique ICAO 24-bit address of the transponder in hex string representation'
+      callsign:
+        type: string
+        example: 'SWR1246'
+        description: 'Callsign of the vehicle (8 chars). Can be null if no callsign has been received'
