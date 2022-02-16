@@ -1,10 +1,12 @@
 # flightDataApp
 An app that provides live data of all aircrafts over a geographical region
 
-Hello Ordina team
+Hello team
 
 Thank you for the opportunity to work on this interesting project
 I have worked on it for a total of 2 hours. I wish I could dedicate more time but I could only work for short time due to previous work commitments
+
+#endoints implemented
 
 I have implemented the following 3 endpoints along with integration tests to validate them:
 
@@ -19,4 +21,4 @@ Next steps (Not done but should be done given more time than 2 hours):
 2) More Unit tests for service class
 3) Unit tests to validate logic in Service class
 4) API integration tests (Using framework like RestAssured)
-5) Performance tests (Using framework like Gatling)
+5) Performance tests (Using a framework like Gatling)
